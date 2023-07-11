@@ -1,0 +1,45 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+nav .router-link-active,
+nav .router-link-exact-active {
+    padding: 15%;
+    border-width: 4px;
+}
+
+.svg-blue {
+    filter: invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%);
+}
+
+.svg-red {
+    filter: invert(13%) sepia(94%) saturate(7466%) hue-rotate(0deg) brightness(94%) contrast(115%);
+}
+
+.svg-green {
+    filter: invert(84%) sepia(19%) saturate(6834%) hue-rotate(58deg) brightness(99%) contrast(87%);
+}
+
+.svg-black {
+    filter: invert(12%) sepia(63%) saturate(6234%) hue-rotate(246deg) brightness(87%) contrast(156%);
+}
+
+.line-clamp-2 { 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
