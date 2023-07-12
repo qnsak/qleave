@@ -20,13 +20,23 @@ type Account struct {
 func createAccount(db *sql.DB) {
 	users := []Account{
 		{
+			Id:            "admin",
+			Name:          "初始賬號",
+			Email:         "admin@mail.com",
+			Password:      "$2a$14$CJ.vq9pxTyTSKKQBW.UCMO7gkxXtRP4Wcft4ZUtii8te0kD99X7uS",
+			Department_id: 1,
+			Salary:        100000,
+			Director_id:   "admin",
+			Entry_at:      time.Now(),
+		},
+		{
 			Id:            "I0001",
 			Name:          "主管一號",
 			Email:         "I0001@mail.com",
 			Password:      "$2a$14$CJ.vq9pxTyTSKKQBW.UCMO7gkxXtRP4Wcft4ZUtii8te0kD99X7uS",
 			Department_id: 1,
 			Salary:        100000,
-			Director_id:   "",
+			Director_id:   "admin",
 			Entry_at:      time.Now(),
 		},
 		{
