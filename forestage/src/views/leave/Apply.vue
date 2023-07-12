@@ -19,15 +19,13 @@ const schema = Yup.object().shape({
     reason: Yup.string().required('請假理由為必填'),
 });
 
-const nationalHoliday = reactive({})
 const leaveType = reactive([])
 
 /*
  * 取得請假頁面資料
  */
 const getApplyLeaveInfo = async () => {
-    let leaveInfo = await api.leave.getApplyLeaveInfo()
-    Object.assign(nationalHoliday, leaveInfo.data.nationalHoliday);
+    let leaveInfo = await api.leave.getApplyLeaveInfo();
     Object.assign(leaveType, leaveInfo.data.leaveType);
 }
 
@@ -110,28 +108,6 @@ const reloadPage = () => {
     <section
         class="overflow-hidden px-8"
     >
-        <div
-            class="container mx-auto p-4 max-w-3xl"
-        >
-            <div>
-                <p
-                    class="text-left font-bold text-lg"
-                >
-                    國定假日
-                </p>
-            </div>
-            <div
-                class="flex flex-wrap gap-1 justify-items-center text-xs"
-            >
-                <div
-                    class="inline-block w-fit border-2 border-green-400 px-2"
-                    v-for="(item, index) in nationalHoliday"
-                >
-                    {{ item.title }}
-                    {{ item.starTime }} ~ {{ item.endTime }}
-                </div>
-            </div>
-        </div>
         <div
             class="container mx-auto p-4 max-w-3xl"
         >
