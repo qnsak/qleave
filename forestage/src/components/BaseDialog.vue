@@ -2,19 +2,8 @@
 import { ref, computed } from 'vue'
 
 const count = ref(0)
-//const dialogShow = ref(false)
 const props = defineProps(['title'])
 const emit = defineEmits(["doSth"]);
-
-const add = () => {
-    emit('doSth', 23);
-    count.value++
-    console.log(count.value)
-}
-
-const childAdd = () => {
-    console.log(122222)
-};
 
 const dialogShow = computed({
     get: () => {

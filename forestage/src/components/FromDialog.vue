@@ -6,15 +6,7 @@ import { useAuthStore } from '@/stores';
 import api from "@/api"
 
 const count = ref(0)
-//const dialogShow = ref(false)
 const emit = defineEmits(["doSth"]);
-
-// console.log(1)
-// const add = () => {
-//     emit('doSth', 23);
-//     count.value++
-//     console.log(count.value)
-// }
 
 const showDialog = ref(false);
 
@@ -36,10 +28,6 @@ const schema = Yup.object().shape({
     type: Yup.string().required('type is required'),
     reason: Yup.string().required('reason is required'),
 });
-
-const authStore = useAuthStore();
-
-const loginResult = ref("")
 
 const formStatus = ref("edit")
 const sendMessega = ref("")

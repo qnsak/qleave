@@ -36,7 +36,6 @@ let api = {
         }
     },
     applyLeavet: async (from) => {
-        console.log(from)
         try {
             const url = BASE_URL;
             const response =  await request.post(url, from);
@@ -84,7 +83,7 @@ let api = {
     },
     getApplyLeaveInfo: async () => {
         try {
-           const url = `${BASE_URL}/apply`
+            const url = `${BASE_URL}/apply`
             const response =  await request.get(url);
             return response.data;
         }

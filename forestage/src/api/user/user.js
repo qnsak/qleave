@@ -6,7 +6,6 @@ let api = {
     getUserInformation: async () => {
         try {
             const url = `${BASE_URL}`
-            console.log(url)
             const response =  await request.get(url, {});
             return response.data;
         }
