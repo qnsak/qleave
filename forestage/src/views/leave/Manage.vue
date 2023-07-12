@@ -193,10 +193,10 @@ const canCancelLeave = (leave) => {
                         </tr>
                     </thead>
                     <tbody
-                        class="h-96 overflow-y-auto"
+                        class="overflow-y-auto"
                     >
                         <tr
-                            class="border-solid border-y border-gray-200 rounded-md p-0.5"
+                            class="h-10 border-solid border-y border-gray-200 rounded-md p-0.5"
                             v-for="leave in leaveList"
                         >
                             <td
