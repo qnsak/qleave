@@ -11,6 +11,7 @@ type Responses struct {
 	Message    string            `json:"message,omitempty"`
 	Data       any               `json:"data,omitempty"`
 	Meta       map[string]string `json:"meta,omitempty"`
+	Links      map[string]string `json:"links,omitempty"`
 }
 
 type ErrorResponse struct {
@@ -19,7 +20,7 @@ type ErrorResponse struct {
 	Message    string `json:"message"`
 }
 
-func APIResponse(ctx *gin.Context, Message string, StatusCode int, Data any, Meta map[string]string) {
+func APIResponse(ctx *gin.Context, Message string, StatusCode int, Data any, Meta map[string]string, Links map[string]string) {
 
 	jsonResponse := Responses{
 		Version:    "1.0.0",
@@ -28,6 +29,7 @@ func APIResponse(ctx *gin.Context, Message string, StatusCode int, Data any, Met
 		Message:    Message,
 		Data:       Data,
 		Meta:       Meta,
+		Links:      Links,
 	}
 
 	if StatusCode >= 400 {

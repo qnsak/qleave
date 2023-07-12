@@ -76,7 +76,7 @@ func (lc *loginController) Login(c *gin.Context) {
 		RefreshToken:    refreshToken,
 	}
 
-	util.APIResponse(c, "Update student data sucessfully", http.StatusOK, loginResponse, nil)
+	util.APIResponse(c, "Update student data sucessfully", http.StatusOK, loginResponse, nil, nil)
 }
 
 func (lc *loginController) CreateUser(c *gin.Context) {
@@ -95,7 +95,7 @@ func (lc *loginController) CreateUser(c *gin.Context) {
 		return
 	}
 
-	util.APIResponse(c, "Update student data sucessfully", http.StatusOK, nil, nil)
+	util.APIResponse(c, "Update student data sucessfully", http.StatusOK, nil, nil, nil)
 }
 
 func (lc *loginController) GetUserInfo(c *gin.Context) {
@@ -107,5 +107,5 @@ func (lc *loginController) GetUserInfo(c *gin.Context) {
 		return
 	}
 
-	util.APIResponse(c, "sucessfully", http.StatusOK, userInfoResponse, nil)
+	util.APIResponse(c, "sucessfully", http.StatusOK, userInfoResponse, nil, nil)
 }

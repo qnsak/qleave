@@ -80,7 +80,7 @@ func (lc *leaveController) GetLeaveList(c *gin.Context) {
 		Links: leaveList.Links,
 	}
 
-	util.APIResponse(c, "sucessfully", http.StatusOK, responce, nil)
+	util.APIResponse(c, "sucessfully", http.StatusOK, responce, nil, nil)
 }
 
 // 請假
@@ -102,7 +102,7 @@ func (lc *leaveController) ApplyLeave(c *gin.Context) {
 		return
 	}
 
-	util.APIResponse(c, "Update student data sucessfully", http.StatusOK, nil, nil)
+	util.APIResponse(c, "Update student data sucessfully", http.StatusOK, nil, nil, nil)
 }
 
 // 取消請假
@@ -122,7 +122,7 @@ func (lc *leaveController) CancelLeave(c *gin.Context) {
 		return
 	}
 
-	util.APIResponse(c, "Update student data sucessfully", http.StatusOK, nil, nil)
+	util.APIResponse(c, "Update student data sucessfully", http.StatusOK, nil, nil, nil)
 }
 
 // 核准請假
@@ -141,7 +141,7 @@ func (lc *leaveController) ApproveLeave(c *gin.Context) {
 		return
 	}
 
-	util.APIResponse(c, "Update student data sucessfully", http.StatusOK, nil, nil)
+	util.APIResponse(c, "Update student data sucessfully", http.StatusOK, nil, nil, nil)
 }
 
 // 取得需要核準的假
@@ -173,7 +173,15 @@ func (lc *leaveController) GetApproveList(c *gin.Context) {
 		"total": total,
 	}
 
-	util.APIResponse(c, "sucessfully", http.StatusOK, leaveList.Data, meta)
+	prev := strconv.FormatInt(leaveList.Links.Prev, 10)
+	next := strconv.FormatInt(leaveList.Links.Next, 10)
+
+	links := map[string]string{
+		"prev": prev,
+		"next": next,
+	}
+
+	util.APIResponse(c, "sucessfully", http.StatusOK, leaveList.Data, meta, links)
 }
 
 // 每日請假清單
@@ -207,7 +215,7 @@ func (lc *leaveController) GetAttendanceRecord(c *gin.Context) {
 		return
 	}
 
-	util.APIResponse(c, "sucessfully", http.StatusOK, leaveList, nil)
+	util.APIResponse(c, "sucessfully", http.StatusOK, leaveList, nil, nil)
 }
 
 // 取得未到的假
@@ -231,7 +239,7 @@ func (lc *leaveController) GetLeaveIsComing(c *gin.Context) {
 		leaveListData = append(leaveListData, ld)
 	}
 
-	util.APIResponse(c, "sucessfully", http.StatusOK, leaveListData, nil)
+	util.APIResponse(c, "sucessfully", http.StatusOK, leaveListData, nil, nil)
 }
 
 func (lc *leaveController) GetLeaveType(c *gin.Context) {
@@ -244,7 +252,7 @@ func (lc *leaveController) GetLeaveType(c *gin.Context) {
 		return
 	}
 
-	util.APIResponse(c, "sucessfully", http.StatusOK, leaveType, nil)
+	util.APIResponse(c, "sucessfully", http.StatusOK, leaveType, nil, nil)
 }
 
 // 取得假單資訊
@@ -257,5 +265,5 @@ func (lc *leaveController) GetApplyLeaveInfo(c *gin.Context) {
 		return
 	}
 
-	util.APIResponse(c, "sucessfully", http.StatusOK, applyLeaveInfo, nil)
+	util.APIResponse(c, "sucessfully", http.StatusOK, applyLeaveInfo, nil, nil)
 }
