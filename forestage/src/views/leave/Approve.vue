@@ -161,16 +161,16 @@
       <span class="text-sm text-gray-700 dark:text-gray-400">
           目前為
           <span
-            class="font-semibold text-gray-900 dark:text-white"
+            class="font-semibold text-gray-900 dark:text-gray-400"
           >
             第{{ pagingInfo.from }} 件
           </span> 
           至 
-          <span class="font-semibold text-gray-900 dark:text-white">
+          <span class="font-semibold text-gray-900 dark:text-gray-400">
             第{{ pagingInfo.to }}  件
           </span>
             總數：
-          <span class="font-semibold text-gray-900 dark:text-white">
+          <span class="font-semibold text-gray-900 dark:text-gray-400">
             {{ pagingInfo.total }}
           </span>
       </span>
