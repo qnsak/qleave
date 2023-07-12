@@ -37,11 +37,7 @@ go mod download
 ```
 go run cmd/app/main.go init
 ```
-4. 初始化資料庫，內部有已建立資料，為了展現使用
-```
-go run cmd/app/main.go init
-```
-5. 執行
+4. 執行
 ```
 go run cmd/app/main.go run
 ```
