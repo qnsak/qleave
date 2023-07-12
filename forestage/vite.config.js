@@ -35,8 +35,8 @@ export default ({ mode }) => {
           theme_color: '#fdd835',
           icons: [
             {
-              src: "icons/icon-144x144.png",
-              sizes: "144x144",
+              src: "icons/icon-32x32.png",
+              sizes: "32x32",
               type: "image/png",
               purpose: "any maskable"
             },
